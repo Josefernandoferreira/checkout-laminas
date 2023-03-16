@@ -1,0 +1,68 @@
+:root {
+    --brand-color: #453e3e;
+}
+
+.navbar {
+    background-color: var(--brand-color);
+}
+
+.btn-primary {
+    background-color: var(--brand-color);
+    border-color: var(--brand-color);
+}
+
+
+.btn-primary:hover{
+    background-color: #7d1616;
+    border: #453e3e;
+}
+
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    justify-content: center;
+}
+
+.table td, .table th {
+    padding: 0.5rem;
+    vertical-align: top;
+    border-top: 1px solid #453e3e;
+}
+
+a {
+    color: #453e3e;
+    text-decoration: none;
+    background-color: transparent;
+}
+.btn-default{
+    background: #cfdeec;
+    color: black;
+    font-weight: 500;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #453e3e;
+    border-color: #453e3e;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #453e3e;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #453e3e;
+    border-color: #453e3e;
+}
