@@ -34,15 +34,21 @@ class Checkout
     private $valor;
 
     /**
+    * @var string
+    */
+    public $item_aprendizado;
+
+    /**
      * @param int|null $id
      * @param int|null $id_produto
      * @param string $titulo
      * @param string $descricao
      * @param string $imagem
      * @param string $valor
+     * @param string $item_aprendizado
      */
 
-    public function __construct($id = null, $id_produto, $titulo, $descricao, $imagem, $valor)
+    public function __construct($id = null, $id_produto, $titulo, $descricao, $imagem, $valor, $item_aprendizado)
     {
         $this->id = $id;
         $this->id_produto = $id_produto;
@@ -50,6 +56,7 @@ class Checkout
         $this->descricao = $descricao;
         $this->imagem = $imagem;
         $this->valor = $valor;
+        $this->item_aprendizado = $item_aprendizado;
     }
 
     /**
@@ -106,5 +113,13 @@ class Checkout
     public function getValor()
     {
         return $this->valor;
+    }
+
+    /**
+    * @return string
+    */
+    public function getitemAprendizado()
+    {
+        return $this->item_aprendizado;
     }
 }

@@ -57,5 +57,13 @@ class CheckoutFieldset extends Fieldset
                 'label' => 'Valor',
             ],
         ]);
+
+        $this->add([
+            'type' => 'text',
+            'name' => 'item_aprendizado',
+            'options' => [
+                'label' => 'Item Resumo',
+            ],
+        ]);
     }
 }

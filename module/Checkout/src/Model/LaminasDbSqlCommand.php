@@ -39,6 +39,7 @@ class LaminasDbSqlCommand implements CheckoutCommandInterface
             'descricao' =>  $checkout->getDescricao(),
             'imagem'  =>  $checkout->getImagem(),
             'valor' =>  $checkout->getValor(),
+            'item_aprendizado' =>  $checkout->getitemAprendizado(),
         ]);
 
         $sql = new Sql($this->db);
@@ -59,6 +60,7 @@ class LaminasDbSqlCommand implements CheckoutCommandInterface
             $checkout->getDescricao(),
             $checkout->getImagem(),
             $checkout->getValor(),
+            $checkout->getitemAprendizado(),
             $id
         );
     }
@@ -79,6 +81,7 @@ class LaminasDbSqlCommand implements CheckoutCommandInterface
                 'descricao' =>  $checkout->getDescricao(),
                 'imagem'  =>  $checkout->getImagem(),
                 'valor' =>  $checkout->getValor(),
+                'item_aprendizado' =>  $checkout->getitemAprendizado(),
         ]);
         $update->where(['id = ?' => $checkout->getId()]);
     

@@ -295,37 +295,17 @@
                             </div>
 
                             <div class="aprendizados">
-                                <div class="item-aprendizados">
-                                    <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
-                                    <p>Uma nova forma de aplicar os conhecimentos da sua formação
-                                    </p>
-                                </div>
-                                <div class="item-aprendizados">
-                                    <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
-                                    <p>Trabalhar para a Justiça na área em que você estudou para atuar</p>
-                                </div>
-                                <div class="item-aprendizados">
-                                    <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
-                                    <p>Toda a teoria e prática da Perícia Judicial</p>
-                                </div>
-                                <div class="item-aprendizados">
-                                    <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
-                                    <p>Elaborar laudos claros e eficientes que ajudem o juiz a avaliar o caso
-                                    </p>
-                                </div>
-                                <div class="item-aprendizados">
-                                    <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
-                                    <p>O funcionamento do Judiciário e como o perito se encaixa nele</p>
-                                </div>
-                                <div class="item-aprendizados">
-                                    <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
-                                    <p>Como definir os honorários das suas Perícias</p>
-                                </div>
-                                <div class="item-aprendizados">
-                                    <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
-                                    <p>Os critérios e princípios para exercer a Perícia de forma ética e eficiente
-                                    </p>
-                                </div>
+                                <?php
+                                    $items = explode(",", $this->checkouts->getitemAprendizado());
+                                    foreach($items as $item){?>
+                                        <div class="item-aprendizados">
+                                            <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
+                                            <p> 
+                                                <?= trim($item); ?>
+                                            </p>
+                                        </div>
+                                    <?php }  
+                                ?>
                                 <div class="item-aprendizados">
                                     <span><img src="/assets/checkout/img/icons/icon-check.png"></span>
                                     <p>Ganhar uma renda extra de R$1.200 a R$12.000 em média, trabalhando de casa e com horário flexível
