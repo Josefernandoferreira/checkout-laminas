@@ -2,7 +2,7 @@
 <?php if ($this->pageCount): ?>
 <nav>
   <ul class="pagination">
-
+  <!-- Previous page link -->
   <?php if (isset($this->previous)): ?>
     <li class="page-item">
       <a class="page-link"
@@ -16,6 +16,7 @@
     </li>
   <?php endif ?>
 
+  <!-- Numbered page links -->
   <?php foreach ($this->pagesInRange as $page): ?>
     <?php if ($page !== $this->current): ?>
       <li class="page-item">
@@ -31,16 +32,17 @@
     <?php endif ?>
   <?php endforeach ?>
 
+  <!-- Next page link -->
   <?php if (isset($this->next)): ?>
     <li class="page-item">
       <a class="page-link"
          href="<?= $this->url($this->route, [], ['query' => ['page' => $this->next]]) ?>">
-         Próximo
+         Proxímo
       </a>
     </li>
   <?php else: ?>
     <li class="page-item disabled">
-      <span class="page-link">Próximo</span>
+      <span class="page-link">Proxímo</span>
     </li>
   <?php endif ?>
   </ul>

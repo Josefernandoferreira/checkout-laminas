@@ -1,0 +1,79 @@
+<?php
+    $form = $this->form;
+    $fieldset = $form->get('checkout');
+
+    $id_produto = $fieldset->get('id_produto');
+    $id_produto->setAttribute('class', 'form-control');
+    $id_produto->setAttribute('placeholder', 'Post title');
+
+    $titulo = $fieldset->get('titulo');
+    $titulo->setAttribute('class', 'form-control');
+    $titulo->setAttribute('placeholder', 'Post content');
+
+    $descricao = $fieldset->get('descricao');
+    $descricao->setAttribute('class', 'form-control');
+    $descricao->setAttribute('placeholder', 'Post content');
+
+    $imagem = $fieldset->get('imagem');
+    $imagem->setAttribute('class', 'form-control');
+    $imagem->setAttribute('placeholder', 'Post content');
+
+    $valor = $fieldset->get('valor');
+    $valor->setAttribute('class', 'form-control');
+    $valor->setAttribute('placeholder', 'Post content');
+
+    $submit = $form->get('submit');
+    $submit->setValue($this->submitLabel);
+    $submit->setAttribute('class', 'btn btn-primary');
+
+    $form->prepare();
+
+    echo $this->form()->openTag($form); 
+?>
+
+<fieldset>
+<div class="form-group">
+    <?= $this->formLabel($id_produto) ?>
+    <?= $this->formElement($id_produto) ?>
+    <?= $this->formElementErrors()->render($id_produto, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($titulo) ?>
+    <?= $this->formElement($titulo) ?>
+    <?= $this->formElementErrors()->render($titulo, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($descricao) ?>
+    <?= $this->formElement($descricao) ?>
+    <?= $this->formElementErrors()->render($descricao, ['class' => 'help-block']) ?>
+</div>
+
+<div class="upload-img">
+    
+    <?php 
+        $valorImagem = $imagem->getValue();
+        if ($valorImagem <> "") { 
+        $caminhoArquivo = "/uploads/" . $imagem->getValue();?>
+        <img src="<?= $this->basePath($caminhoArquivo) ?>" alt="Imagem"/>
+    <?php } ?>
+
+    <div class="form-group">
+        <?= $this->formLabel($imagem) ?>
+        <?= $this->formFile($imagem) ?>
+        <?= $this->formElementErrors()->render($imagem, ['class' => 'help-block']) ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($valor) ?>
+    <?= $this->formElement($valor) ?>
+    <?= $this->formElementErrors()->render($valor, ['class' => 'help-block']) ?>
+</div>
+</fieldset>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($fieldset->get('id'));
+echo $this->form()->closeTag();

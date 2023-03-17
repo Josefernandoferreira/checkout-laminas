@@ -31,10 +31,12 @@
 //     ],
 // ];
 
+
+
  return [
      "db" => [
          "driver"   => "Pdo",
-         "dsn"      => "mysql:dbname=album_db;host=localhost",
+         "dsn"      => "mysql:dbname=checkout_db;host=localhost",
          "username" => "root",
          "password" => "",
      ],

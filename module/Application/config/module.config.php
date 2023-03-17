@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Application;
 
-use Album\Controller\AlbumController;
+use Produto\Controller\ProdutoController;
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;
 use Laminas\ServiceManager\Factory\InvokableFactory;
@@ -18,44 +18,44 @@ return [
                 'route' => 'home',
             ],
             [
-                'label' => 'Album',
-                'route' => 'album',
+                'label' => 'Produto',
+                'route' => 'produto',
                 'pages' => [
                     [
-                        'label'  => 'Add',
-                        'route'  => 'album',
+                        'label'  => 'Adicionar',
+                        'route'  => 'produto',
                         'action' => 'add',
                     ],
                     [
-                        'label'  => 'Edit',
-                        'route'  => 'album',
+                        'label'  => 'Editar',
+                        'route'  => 'produto',
                         'action' => 'edit',
                     ],
                     [
-                        'label'  => 'Delete',
-                        'route'  => 'album',
+                        'label'  => 'Deletar',
+                        'route'  => 'produto',
                         'action' => 'delete',
                     ],
                 ],
             ],
 
             [
-                'label' => 'Blog',
-                'route' => 'blog',
+                'label' => 'Checkout',
+                'route' => 'checkout',
                 'pages' => [
                     [
-                        'label'  => 'Add',
-                        'route'  => 'blog/add',
+                        'label'  => 'Adicionar',
+                        'route'  => 'checkout/add',
                         'action' => 'add',
                     ],
                     [
-                        'label'  => 'Edit',
-                        'route'  => 'blog/edit',
+                        'label'  => 'Editar',
+                        'route'  => 'checkout/edit',
                         'action' => 'edit',
                     ],
                     [
-                        'label'  => 'Delete',
-                        'route'  => 'blog/delete',
+                        'label'  => 'Deletar',
+                        'route'  => 'checkout/delete',
                         'action' => 'delete',
                     ],
                 ],
